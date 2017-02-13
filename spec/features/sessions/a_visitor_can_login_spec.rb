@@ -12,7 +12,6 @@ describe 'As a user' do
       fill_in 'user[password_confirmation]', with: "123"
       click_on "Create Account"
 
-      save_and_open_page
       click_on "Sign In"
 
       fill_in :Email, with: 'aciccone2014@gmail.com'

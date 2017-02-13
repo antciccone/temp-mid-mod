@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe "As a Logged in User" do
   context "when I visit index path" do
-    it "I can enter a link through the form" do
+    it "I can enter a link through the form", :js => true do
       User.create(email: 'test@test.com', password_digest: BCrypt::Password.create("test"))
 
       visit login_path

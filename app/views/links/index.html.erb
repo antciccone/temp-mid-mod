@@ -1,0 +1,29 @@
+<br>
+<div class="container">
+
+  <%= form_for @link do |f| %>
+  <%= f.label :url %>
+  <%= f.text_field :url  %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit "Submit Link" %>
+  <% end %>
+
+<br>
+<div>
+  <h3>  <%= current_user.name %>'s links</h3>
+<table>
+  <tr>
+    <th>Link URL</th>
+    <th>Title</th>
+    <th>Read</th>
+  </tr>
+  <%current_user.links.each do |link| %>
+    <tr>
+      <td><%=link.url%> </td>
+      <td><%=link.title%> </td>
+      <td><%=link.read%> </td>
+    </tr>
+    <% end %>
+</table>
+</div>

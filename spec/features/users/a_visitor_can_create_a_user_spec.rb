@@ -12,7 +12,7 @@ describe 'As a visitor' do
     end
   end
 
-  it "I can make an account" do
+  it "I can make an account an see a flash message" do
     visit new_user_path
     save_and_open_page
     fill_in :Name, with: "Anthony"

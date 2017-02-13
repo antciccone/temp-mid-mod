@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :links, only: [:index]
   resources :users, only: [:index, :new, :create]
 
+  get '/', to: redirect('/login')
+  get '/login', to: 'sessions#new'
+
+
   namespace :api do
     namespace :v1 do
       resources :links, only: [:update]

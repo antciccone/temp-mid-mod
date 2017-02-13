@@ -14,7 +14,8 @@ gem 'rails_12factor', group: :production
 gem 'responders'
 gem 'awesome_print'
 gem 'sprockets-es6'
- gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+gem 'rack-cors', :require => 'rack/cors'
 
 # gem 'unicorn'
 

@@ -12,7 +12,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "You have created an account"
-      redirect_to links_path
+      redirect_to login_path
+    else
+      flash[:notice] = "Username and password do not match"
+      redirect_to new_user_path
     end
   end
 

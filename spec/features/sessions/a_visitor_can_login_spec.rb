@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe 'As a user' do
   context 'when I sign up' do
-    it "I can then login" do
+    it "I can then login" , :js => true do
       visit new_user_path
 
       fill_in :Name, with: "Anthony"
@@ -12,6 +12,7 @@ describe 'As a user' do
       fill_in 'user[password_confirmation]', with: "123"
       click_on "Create Account"
 
+      save_and_open_page
       click_on "Sign In"
 
       fill_in :Email, with: 'aciccone2014@gmail.com'

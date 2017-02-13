@@ -14,7 +14,7 @@ describe "As a user" do
       fill_in 'user[password_confirmation]', with: "13"
       click_on "Create Account"
 
-      expect(page).to have_content('ajdlas')
+      expect(page).to have_content("Username and password do not match")
     end
   end
 end

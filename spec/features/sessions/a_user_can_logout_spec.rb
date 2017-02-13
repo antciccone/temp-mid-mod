@@ -7,7 +7,7 @@ describe 'As a signed in user' do
       User.create(email: 'test@test.com', password_digest: BCrypt::Password.create("test"))
 
       visit login_path
-
+      save_and_open_page
       fill_in :Email, with: 'test@test.com'
       fill_in :Password, with: "test"
       click_on "Log In!"

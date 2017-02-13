@@ -20,7 +20,7 @@ module Urlockbox
       config.middleware.insert_before 0, "Rack::Cors" do
        allow do
          origins '*'
-         resource '*', :headers => :any, :methods => [:get, :post, :options, :put, :patch]
+         resource '*', :headers => :any, :methods => [:get, :post, :create, :options, :put, :patch]
        end
      end
 
@@ -29,7 +29,7 @@ module Urlockbox
      config.middleware.insert_before 0, Rack::Cors do
        allow do
          origins '*'
-         resource '*', :headers => :any, :methods => [:get, :post, :options, :put, :patch]
+         resource '*', :headers => :any, :methods => [:get, :create, :post, :options, :put, :patch]
        end
      end
   end

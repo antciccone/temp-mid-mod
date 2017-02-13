@@ -7,6 +7,7 @@ class Api::V1::LinksController < ApplicationController
   def update
     @link = Link.find(params[:id])
     @link.update(read: true)
+    @link.update(counter: @link.counter + 1)
     if @link.update_attributes(link_params)
       render json: @link
     else

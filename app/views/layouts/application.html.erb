@@ -7,9 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'shared/not_signed_in_navbar' %>
 <div class="container">
   <%= yield %>
 </div>
 
 </body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 </html>

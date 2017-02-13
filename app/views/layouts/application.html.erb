@@ -7,13 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if current_user %>
+  <%= render 'shared/signed_in_navbar' %>
+  <% else %>
   <%= render 'shared/not_signed_in_navbar' %>
+  <% end %>
+
 <div class="container">
   <% if flash[:notice] %>
   <center><div class="notice"><%= flash[:notice] %></div><center>
+</div>
+
+
     <% end %>
   <%= yield %>
-</div>
 
 </body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">

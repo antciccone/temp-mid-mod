@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   get '/', to: redirect('/login')
   get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
 
 
   namespace :api do

@@ -14,7 +14,11 @@ describe 'As a user' do
 
       click_on "Sign In"
 
+      fill_in :Email, with:, 'aciccone2014@gmail.com'
+      fill_in :Password, with:, "123"
 
+      expect(page).to have_content('You have signed in!')
+      expect(curret_path).to eq(links_path)
     end
   end
 end

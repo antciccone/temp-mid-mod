@@ -8,7 +8,7 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(link_params)
     @link.user_id = current_user.id
-    require "pry"; binding.pry
+    @link.invalid_link?
     if @link.save
       redirect_to links_path
     end

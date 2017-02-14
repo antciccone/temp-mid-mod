@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :links, only: [:update, :index]
+      namespace :links do
+        get '/top-ten', to: 'top#index'
+      end
+        resources :links, only: [:update, :index]
     end
   end
 end

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :links do
         get '/top-ten', to: 'top#index'
+        put '/top-ten', to: 'top#update'
+
       end
         resources :links, only: [:update, :index]
     end

@@ -22,7 +22,7 @@ describe "As a Logged in User" do
     end
   end
 
-  it "i see an error if an enter an invalid url", :js => true do
+  xit "I see an error if an enter an invalid url", :js => true do
     User.create(email: 'test@test.com', password_digest: BCrypt::Password.create("test"))
 
     visit login_path

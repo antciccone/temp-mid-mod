@@ -1,5 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe 'User' do
+  context 'relationships' do
+    it "has many links" do
+      user = User.new(name: 'ant', email: 'ant@gmail.com')
+
+      expect(user).to respond_to(:links)
+    end
+  end
 end

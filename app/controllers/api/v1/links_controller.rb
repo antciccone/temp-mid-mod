@@ -5,7 +5,6 @@ class Api::V1::LinksController < ApplicationController
   end
 
   def update
-    require "pry"; binding.pry
     @link = Link.find(params[:id])
     @link.update(read: true)
     @link.update(counter: @link.counter + 1)

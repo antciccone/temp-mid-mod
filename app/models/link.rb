@@ -8,6 +8,6 @@ class Link < ActiveRecord::Base
   end
 
   def self.top_ten
-    Link.all.sort_by(&:counter).reverse[0..9]
-  end
+    Link.where(updated_at: (Time.now - 24.hours)..Time.now).sort_by(&:counter).reverse[0..9]
+   end
 end

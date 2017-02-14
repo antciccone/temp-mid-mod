@@ -12,12 +12,14 @@
     <th>Link URL</th>
     <th>Title</th>
     <th>Read</th>
+    <th>Mark as read</th>
   </tr>
   <%current_user.links.each do |link| %>
     <tr>
       <td><%=link.url%> </td>
       <td><%=link.title%> </td>
       <td><%=link.read%> </td>
+      <td><button class="mark-as-read" id=<%=link.id  %>>Mark as Read</button></td>
       <td><%=link_to "Edit", edit_link_path(link)  %></td>
     </tr>
     <% end %>

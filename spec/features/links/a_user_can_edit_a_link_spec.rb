@@ -21,7 +21,7 @@ describe 'As a signed in user' do
       fill_in 'link[title]', with: "google!"
       click_on "Submit Link"
 
-      expect(page).to have_content('google!')
+      expect(page).to have_content("https://www.google.com")
       expect(current_path).to eq(links_path)
 
     end

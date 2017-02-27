@@ -14,7 +14,6 @@ function markHot() {
   var allLinks = $('.url-link').slice(1,9)
 
   for (var i = 0; i < allLinks.length; i++) {
-    debugger;
     allLinks[i].parentElement.append("Hot Link")
   }
 }

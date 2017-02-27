@@ -1,11 +1,11 @@
 var $newLinkTitle, $newLinkUrl;
 
 $(document).ready(function(){
+  $("body").on("click", ".read", function(){
+    this.parentElement.children[2].innerHTML = "read: true"
+    var linkId = this.id
+  
 
-  $('#links-list').on('click', 'button.mark-read', function(){
-    var $this = $(this);
-    var linkId = $this.parents('.link').data('id');
-    
     $.ajax({
       url: '/api/v1/links/' + linkId,
       method: 'PATCH',

@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
+      flash[:notice] = "You have successfully logged in!"
       redirect_to :root
     else
       flash[:notice] = user.errors.full_messages

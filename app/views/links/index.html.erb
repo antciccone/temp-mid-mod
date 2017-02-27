@@ -9,12 +9,12 @@
 </form>
 
 <div id="links-list"></div>
-
+<input type="text" id="myInput" placeholder="Search for link...">
 <h2>Hot Reads!</h2>
 <ol id="hot-reads">
 <% @hot_links.each do |read| %>
   <li class='hot-read'>
-    <a href="<%= read.url %>"><%= read.url %></a>
+    <a class="url-link" href="<%= read.url %>"><%= read.url %></a>
     <p>title: <%= read.title %></p>
     <p>read: <%= read.read %></p>
     <p><%= link_to  "Delete Link", link_path(read), method: :delete %></p>

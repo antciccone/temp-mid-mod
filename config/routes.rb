@@ -2,14 +2,14 @@ Rails.application.routes.draw do
 
   root to: "links#index"
 
-  resources :links, only: [:index]
+  resources :links, only: [:index, :create, :update, :edit]
+  resources :users, only: [:index, :new, :create]
 
   get '/', to: redirect('/login')
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
-
-  get '/signup' => 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  
   resources :users, only: [:index, :new, :create]
 
   namespace :api do

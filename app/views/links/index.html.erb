@@ -14,7 +14,9 @@
 <ol id="hot-reads">
 <% @hot_links.each do |read| %>
   <li class='hot-read'>
-    <a href="<%= read.url %>"><%= read.url %></a>
+    <a href="<%= read.url %>"><%= read.url %></a> | title: <%= read.title %> | read: <%= read.read %>
+    <p><%= link_to  "Delete Link", link_path(read), method: :delete %></p>
+    <p><%= link_to  "Edit Link", edit_link_path(read)%></p>
   </li>
 <% end %>
 </ol>

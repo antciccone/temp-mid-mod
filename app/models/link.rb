@@ -6,4 +6,7 @@ class Link < ApplicationRecord
       .group("links.url")
       .order('count("reads".id) DESC').limit(10)
   }
+
+  has_many :reads,  dependent: :destroy
+  belongs_to :user
 end

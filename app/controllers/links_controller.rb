@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   def index
-    @hot_links = Link.top_ten
+    @hot_links = Link.all_links
   end
 
   def edit

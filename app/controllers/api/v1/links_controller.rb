@@ -1,5 +1,9 @@
 class Api::V1::LinksController < ApplicationController
 
+  def index
+    render json: Link.read_links
+  end
+
   def create
     @link = Link.new link_params
     if @link.save

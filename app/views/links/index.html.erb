@@ -16,8 +16,8 @@
 <% @hot_links.each do |read| %>
   <li class='hot-read'>
     <a id="<%= read.read %>" class="url-link" href="<%= read.url %>"><%= read.url %></a>
-    <p><%= link_to  "Delete Link", link_path(read), method: :delete %> | <%= link_to  "Edit Link", edit_link_path(read)%> </p>
-
+    <p><%= link_to  "Edit Link", edit_link_path(read)%> </p>
+    <p> <%= read.read %> </p>
     <button id="<%= read.id %>" class="read">Mark as Read</button>
   </li>
 <% end %>

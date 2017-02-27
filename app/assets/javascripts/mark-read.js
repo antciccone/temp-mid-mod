@@ -7,7 +7,6 @@ var $newLinkTitle, $newLinkUrl;
 //   });
 
 
-
 function markHot() {
   $('.url-link')[0].parentElement.append("Hottest Read")
 
@@ -20,7 +19,8 @@ function markHot() {
 
 $(document).ready(function(){
   $("body").on("click", ".read", function(){
-    var linkId = this.id
+     var linkId = this.id
+    this.parentElement.children[2].innerHTML = "true"
 
     $(this).parent().children().first().css("text-decoration", "line-through")
 

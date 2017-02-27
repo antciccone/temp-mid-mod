@@ -18,7 +18,7 @@ gem 'better_errors', group: :development
 gem 'react-rails'
 gem 'sprockets-es6'
 gem 'rack-cors', :require => 'rack/cors'
-
+gem 'validate_url'
 # gem 'unicorn'
 
 # gem 'capistrano-rails', group: :development

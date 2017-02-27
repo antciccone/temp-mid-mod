@@ -6,6 +6,8 @@ describe 'As a signed in user' do
       user = User.create(email: 'ant@ant.com', password_digest: BCrypt::Password.create("test"))
       link = Link.create(url: "https://www.google.com", title: 'google', user_id: user.id)
 
+      Read.create(link_id: link.id)
+
       visit login_path
 
       fill_in 'email', with: 'ant@ant.com'

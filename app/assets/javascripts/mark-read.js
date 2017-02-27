@@ -8,12 +8,15 @@ var $newLinkTitle, $newLinkUrl;
 
 
 function markHot() {
-  $('.url-link')[0].parentElement.append("Hottest Read")
 
-  var allLinks = $('.url-link').slice(1,9)
+  var allLinks = $('.url-link').slice(0,9)
 
   for (var i = 0; i < allLinks.length; i++) {
-    allLinks[i].parentElement.append("Hot Link")
+    if ([i] == 0 )  {
+      allLinks[i].parentElement.append("Hottest Link")
+    } else {
+      allLinks[i].parentElement.append("Hot Link")
+    }
   }
 }
 
@@ -48,4 +51,5 @@ $(document).ready(function(){
      }
    }
   });
+
 })

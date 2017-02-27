@@ -38,4 +38,18 @@ describe 'As a visitor' do
     expect(current_path).to eq(new_user_path)
     expect(page).to have_content("Email has already been taken")
   end
+
+  it "password and password confirmation must match" do
+
+    visit new_user_path
+
+    fill_in 'user[email]', with: 'test@test.com'
+    fill_in 'user[password]', with: "123"
+    fill_in 'user[password_confirmation]', with: "12"
+
+    click_on "Create Account"
+
+    expect(current_path).to eq(new_user_path)
+    expect(page).to have_content("Password confirmation doesn't match Password")
+  end
 end

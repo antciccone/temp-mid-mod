@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>URLockBox</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+</head>
+<body>
+  <% if current_user %>
+  <%= render 'shared/signed_in_navbar' %>
+  <% else %>
+  <%= render 'shared/not_signed_in_navbar' %>
+  <% end %>
+  <%= yield %>
+</div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+</html>

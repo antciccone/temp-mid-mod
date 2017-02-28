@@ -1,17 +1,14 @@
 require "rails_helper"
 
 RSpec.describe "can create links", :js => :true do
-  scenario "Create a new link" do
+  xscenario "Create a new link" do
+    link1 =   Link.create(url: "https://www.espn.com", title: "espn", read: true)
+    Read.create(link_id: link1.id )
 
-    visit "/"
-    fill_in "Title:", :with => "Turing"
-    fill_in "URL:", :with => "https://turing.io"
-    click_on "Add Link"
+    visit '/'
 
-    within('#links-list') do
-      expect(page).to have_text("Turing")
-      expect(page).to have_text("https://turing.io")
-    end
+    expect(page).to have_content("Mark as Unread")
+    expect(page).to_not have_content("Mark as Read")
 
   end
 end

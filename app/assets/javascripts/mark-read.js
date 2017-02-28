@@ -1,15 +1,3 @@
-function markHot() {
-
-  var allLinks = $('.url-link').slice(0,9)
-
-  for (var i = 0; i < allLinks.length; i++) {
-    if ([i] == 0 )  {
-      allLinks[i].parentElement.append("Hottest Link")
-    } else {
-      allLinks[i].parentElement.append("Hot Link")
-    }
-  }
-}
 
 function setAsRead() {
     var buttons = $('button')
@@ -50,7 +38,6 @@ $(document).ready(function(){
      }
   })
 
-  markHot()
   $("#myInput").on('keyup', function() {
     var filter = this.value.toUpperCase();
     var search = $('.hot-read')

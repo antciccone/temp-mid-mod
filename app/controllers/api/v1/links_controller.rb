@@ -7,7 +7,6 @@ class Api::V1::LinksController < ApplicationController
   def create
     @link = Link.new link_params
     if @link.save
-      Read.create(link_id: @link.id)
       render json: @link, status: 201
     else
       render json: @link.errors.full_messages, status: 500

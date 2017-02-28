@@ -16,12 +16,13 @@
 <button id="show-all" class="filter-by-read">Show all links</button>
 
 <h2>Hot Reads!</h2>
+If your link is in the top ten it will turn green. If it is number one it will be red
 <ol id="hot-reads">
 <% @hot_links.each do |read| %>
   <li id="<%= read.read %>" class="hot-read">
     <a id="<%= read.read %>" class="url-link" href="<%= read.url %>"><%= read.url %></a>
     <p><%= link_to  "Edit Link", edit_link_path(read)%> </p>
-    <p>Read: <%= read.read %> </p>
+    <p style="width: 50px" class="<%= read.checker %>">Read: <%= read.read %> </p>
     <button id="<%= read.id %>" class="read">Mark as Read</button>
   </li>
 <% end %>

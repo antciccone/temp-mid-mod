@@ -22,4 +22,17 @@ class Link < ApplicationRecord
     grouped = links.group_by{|link| link.url}
     grouped.values.map {|similiar_links| similiar_links.first}.reverse
   end
+
+  def checker
+    check_url = url
+    if Link.hot.first.url == check_url
+      return "red"
+    else
+      Link.hot.each do |link|
+        if link.url == check_url
+          return "green"
+        end
+      end
+    end
+  end
 end

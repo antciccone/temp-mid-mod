@@ -56,10 +56,12 @@ $(document).ready(function(){
   $("body").on("click", ".filter-by-read", function(){
     if (this.id == "show-all-read") {
       $('#false.hot-read').hide()
+      $('#true.hot-read').show()
     } else if (this.id == 'show-all-unread'){
       $('#true.hot-read').hide()
+      $('#false.hot-read').show()
     } else {
-      $('#true.hot-read').show()
+      $('#false.hot-read').show()
       $('#true.hot-read').show()
     }
   })

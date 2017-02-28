@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   $("body").on("click", ".read", function(){
      var linkId = this.id
-
+     debugger;
      if (this.parentElement.children[2].innerHTML.trim() == "true") {
        this.parentElement.children[2].innerHTML = "false"
        this.innerHTML = "Mark as Read"

@@ -8,4 +8,12 @@ RSpec.describe User, type: :model do
       expect(user).to respond_to(:links)
     end
   end
+  context 'validations' do
+    it 'email uniqness' do
+      link = Link.create(url: "https://www.yahoo.com")
+      link2 = Link.create(url: "https://www.yahoo.com")
+
+      expect(link2).to_not be_invalid
+    end
+  end
 end

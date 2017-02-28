@@ -1,12 +1,3 @@
-// var $newLinkTitle, $newLinkUrl;
-
-// function hotreads(linkURL) {
-//   $.ajax({
-//     url: 'http://localhost:8080/links',
-//     method: 'POST'
-//   });
-
-
 function markHot() {
 
   var allLinks = $('.url-link').slice(0,9)
@@ -57,8 +48,6 @@ $(document).ready(function(){
          data: {read: true}
        });
      }
-
-    // hotreads()
   })
 
   markHot()

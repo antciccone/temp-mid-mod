@@ -1,6 +1,6 @@
 # Urlock Box
 
-URLockbox is a app that allows a user to create an account and login using. The user is then allowed to add links to the index page and mark the links are read or unread.  
+URLockbox is a app that allows a user to create an account and login using their email. The user is then allowed to add links to the index page and mark the links as read or unread. This app also renders an api of top read links.
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ git checkout final
   npm install phantomjs -g
 ```
 
-5. Create and migrate database
+4. Create and migrate database
 ```shell
   rake db:create db:migrate
 ```
@@ -34,9 +34,7 @@ rspec
 
 ## Deployment
 
-Briefcase is currently deployed to two environments. Each environment is linked to different Census applications.
 * Production: https://glacial-shelf-71817.herokuapp.com/
-
 
 ## Technology
 
@@ -46,6 +44,5 @@ The application is currently using the following technlogies:
 * Libraries: JQuery, Axios
 
 ## Authors
-* [Daniel Shin](https://github.com/dshinzie/)
+
 * [Anthony Ciccone](https://github.com/anticcone/)
-* [Matt DeMarteau](https://github.com/MDes41)

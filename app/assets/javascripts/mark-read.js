@@ -1,10 +1,11 @@
 
 function setAsRead() {
-    var buttons = $('button')
-    for (var i = 0; i < buttons.length; i++) {
-      if (buttons[i].parentElement.children[2].innerHTML.trim() == "true") {
-        buttons[i].innerHTML = 'Mark as Unread'
-        $(buttons[i]).parent().children().first().css("text-decoration", "line-through")
+    var hot = $('.hot-read')
+    debugger;
+    for (var i = 0; i < hot.length; i++) {
+      if (hot[i].children[2].innerHTML == "Read: true ") {
+        hot[i].children[3].innerHTML = 'Mark as Unread'
+        $(hot[i]).children().first().css("text-decoration", "line-through")
       }
     }
 }

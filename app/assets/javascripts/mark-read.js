@@ -1,4 +1,4 @@
-var $newLinkTitle, $newLinkUrl;
+// var $newLinkTitle, $newLinkUrl;
 
 // function hotreads(linkURL) {
 //   $.ajax({
@@ -20,18 +20,43 @@ function markHot() {
   }
 }
 
+function setAsRead() {
+    var buttons = $('button')
+    for (var i = 0; i < buttons.length; i++) {
+      if (buttons[i].parentElement.children[2].innerHTML.trim() == "true") {
+        buttons[i].innerHTML = 'Mark as Unread'
+        $(buttons[i]).parent().children().first().css("text-decoration", "line-through")
+      }
+    }
+}
+
 $(document).ready(function(){
+  setAsRead()
+
   $("body").on("click", ".read", function(){
      var linkId = this.id
-    this.parentElement.children[2].innerHTML = "true"
 
-    $(this).parent().children().first().css("text-decoration", "line-through")
+     if (this.parentElement.children[2].innerHTML.trim() == "true") {
+       this.parentElement.children[2].innerHTML = "false"
+       this.innerHTML = "Mark as Read"
+       $(this).parent().children().first().css("text-decoration", "none")
 
-    $.ajax({
-      url: '/api/v1/links/' + linkId,
-      method: 'PATCH',
-      data: {read: true}
-    });
+       $.ajax({
+         url: '/api/v1/links/' + linkId,
+         method: 'PATCH',
+         data: {read: false}
+       });
+     } else {
+       this.parentElement.children[2].innerHTML = "true"
+       $(this).parent().children().first().css("text-decoration", "line-through")
+       this.innerHTML = "Mark as Unread"
+
+       $.ajax({
+         url: '/api/v1/links/' + linkId,
+         method: 'PATCH',
+         data: {read: true}
+       });
+     }
 
     // hotreads()
   })

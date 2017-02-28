@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "You have successfully logged in!"
       redirect_to :root
     else
-      flash[:notice] = user.errors.full_messages
+      flash[:notice] = "Email and password do not match"
       redirect_to :login
     end
   end

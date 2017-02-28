@@ -31,7 +31,38 @@ describe 'index' do
     get '/api/v1/links'
 
     links = JSON.parse(response.body)
+    
+    expect(links.count).to eq(2)
     expect(links.first["url"]).to eq('https://www.yahoo.com/')
     expect(links.second["url"]).to eq('https://www.google.com/')
+  end
+
+  it 'only shows ten links' do
+    link1 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link2 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link3 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link4 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link5 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link6 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link7 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link8 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link9 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link10 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    link11 = Link.create(title: "yahoo", url: "https://www.yahoo.com/", read: true)
+    Read.create(link_id: link1.id)
+    Read.create(link_id: link2.id)
+    Read.create(link_id: link3.id)
+    Read.create(link_id: link4.id)
+    Read.create(link_id: link5.id)
+    Read.create(link_id: link6.id)
+    Read.create(link_id: link7.id)
+    Read.create(link_id: link8.id)
+    Read.create(link_id: link9.id)
+    Read.create(link_id: link10.id)
+
+    get '/api/v1/links'
+    links = JSON.parse(response.body)
+
+    expect(links.count).to eq(10)
   end
 end

@@ -53,4 +53,14 @@ $(document).ready(function(){
    }
   });
 
+  $("body").on("click", ".filter-by-read", function(){
+    if (this.id == "show-all-read") {
+      $('#false.hot-read').hide()
+    } else if (this.id == 'show-all-unread'){
+      $('#true.hot-read').hide()
+    } else {
+      $('#true.hot-read').show()
+      $('#true.hot-read').show()
+    }
+  })
 })

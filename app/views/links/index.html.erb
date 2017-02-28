@@ -11,10 +11,14 @@
 <div id="links-list"></div>
 <br><br>
 <input class="search" type="text" id="myInput" placeholder="Search for link...">
+<button id="show-all-read" class="filter-by-read">Show all read</button>
+<button id="show-all-unread" class="filter-by-read">Show all Unread</button>
+<button id="show-all" class="filter-by-read">Show all links</button>
+
 <h2>Hot Reads!</h2>
 <ol id="hot-reads">
 <% @hot_links.each do |read| %>
-  <li class='hot-read'>
+  <li id="<%= read.read %>" class="hot-read">
     <a id="<%= read.read %>" class="url-link" href="<%= read.url %>"><%= read.url %></a>
     <p><%= link_to  "Edit Link", edit_link_path(read)%> </p>
     <p>Read: <%= read.read %> </p>
